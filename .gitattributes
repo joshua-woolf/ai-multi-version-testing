@@ -1,0 +1,29 @@
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# JavaScript files
+*.js text
+*.json text
+
+# YAML files
+*.yml text
+*.yaml text
+
+# Docker files
+Dockerfile text
+
+# Documentation
+*.md text
+*.txt text
+
+# Configs
+.editorconfig text
+.gitignore text
+.gitattributes text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.zip binary

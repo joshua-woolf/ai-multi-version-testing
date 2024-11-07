@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-api-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-api
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: weather-api
+        version: v1
+    spec:
+      containers:
+      - name: weather-api
+        image: localhost:5000/weather-api:v1
+        env:
+        - name: API_VERSION
+          value: "1"
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-api-v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-api
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: weather-api
+        version: v2
+    spec:
+      containers:
+      - name: weather-api
+        image: localhost:5000/weather-api:v2
+        env:
+        - name: API_VERSION
+          value: "2"
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: weather-api-v1
+spec:
+  ports:
+  - port: 3000
+    targetPort: 3000
+  selector:
+    app: weather-api
+    version: v1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: weather-api-v2
+spec:
+  ports:
+  - port: 3000
+    targetPort: 3000
+  selector:
+    app: weather-api
+    version: v2
