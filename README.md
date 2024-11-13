@@ -39,4 +39,4 @@ V2: Returns temperatures in Fahrenheit with winter weather
 To switch versions, add `?version=1` or `?version=2` to the web UI URL.
 
 Local Development
-The application uses a local Docker registry at localhost:5000 for development. All services are containerized and can be rebuilt using the provided Dockerfiles.
+The application uses a local Docker registry at localhost:20000 for development. All services are containerized and can be rebuilt using the provided Dockerfiles.

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: weather-api
-        image: localhost:5000/weather-api:v1
+        image: localhost:20000/weather-api:v1
         env:
         - name: API_VERSION
           value: "1"
@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
       - name: weather-api
-        image: localhost:5000/weather-api:v2
+        image: localhost:20000/weather-api:v2
         env:
         - name: API_VERSION
           value: "2"

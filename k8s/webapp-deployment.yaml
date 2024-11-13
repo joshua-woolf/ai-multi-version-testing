@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: weather-webapp
-        image: localhost:5000/weather-webapp:latest
+        image: localhost:20000/weather-webapp:latest
         ports:
         - containerPort: 80
 ---

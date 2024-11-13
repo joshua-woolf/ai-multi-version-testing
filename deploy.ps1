@@ -4,15 +4,15 @@ kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.10/docs/co
 
 # Build and push API versions
 Push-Location api
-docker build -t localhost:5000/weather-api:v1 --build-arg API_VERSION=1 .
-docker push localhost:5000/weather-api:v1
-docker build -t localhost:5000/weather-api:v2 --build-arg API_VERSION=2 .
-docker push localhost:5000/weather-api:v2
+docker build -t localhost:20000/weather-api:v1 --build-arg API_VERSION=1 .
+docker push localhost:20000/weather-api:v1
+docker build -t localhost:20000/weather-api:v2 --build-arg API_VERSION=2 .
+docker push localhost:20000/weather-api:v2
 
 # Build and push webapp
 Set-Location ../webapp
-docker build -t localhost:5000/weather-webapp .
-docker push localhost:5000/weather-webapp
+docker build -t localhost:20000/weather-webapp .
+docker push localhost:20000/weather-webapp
 
 # Deploy to Kubernetes
 Set-Location ..
